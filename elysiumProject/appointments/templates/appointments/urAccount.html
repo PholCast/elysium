@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu cuenta</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/appointments.css' %}">
+    <link rel="stylesheet" href="{% static 'css/urAccount.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+
+</head>
+<body>
+    <!-- NAVBAR -->
+    <section id="hero">
+        <!--==navigation====================-->
+        <nav class="navigation">
+            <!--**menu-btn*****-->
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+            <!--**logo*********-->
+            <a href="/appointments" class="logo"><span>Ally</span>syum</a>
+            <!--**menu*********-->
+            <ul class="menu">
+                <li><a href="/appointments/clinicHistory">Historia Clinica</a></li>
+            </ul>
+            <!--**contact*******-->
+            <div class="navbar-logout">
+                {% if user.tipoDeAfiliacion != 'NA' %}
+                <a href="/appointments/getAppointments" class="nav-appointment-btn">Pedir cita</a>
+                {% endif %}
+                <a class="nav-appointment-btn account-button" href="/appointments/urAccount">Tu cuenta</a>
+                <button class="nav-appointment-btn" onclick="window.location.href='/users/logout'">Logout</button>
+            </div>
+        </nav><!--nav-end-->
+        <!--==Content============================-->
+        <div class="hero-content">
+            <!--**text****************-->
+            <div class="hero-text">
+                <h1>Esta es la información de tu cuenta!</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de la cuenta -->
+    <ul class = "infoAcc">
+        <li>Cédula: {{ Info.cedula }}</li>
+        <li>Nombre: {{ Info.nombre }}</li>
+        <li>Apellidos: {{ Info.apellidos }}</li>
+        <li>IPS: {{ Info.IPS }}</li>
+        <li>Correo: {{ Info.correo }}</li>
+        <li>Tipo de Afiliación: {{ Info.tipoDeAfiliacion }}</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,55 @@
+.clinicHistoryDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 30px;
+
+}
+
+.pastAppointments h1{
+    font-size: 25px;
+    color: black;
+    margin-bottom: 30px;
+
+}
+
+.futureAppointments h1{
+    
+    font-size: 25px;
+    color: black;
+    margin-bottom: 30px;
+
+    
+  
+
+}
+
+.pending-container{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+   
+    margin-bottom: 20px;
+   
+    
+
+}
+
+.appointment-container{
+    margin-bottom: 20px;
+}
+.cancel{
+    width: 80px;
+    background-color: red;
+    color:white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    
+
+}

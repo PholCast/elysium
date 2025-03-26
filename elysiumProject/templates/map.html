@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="{% static 'css/map.css' %}">
+    <title>Elysium Map</title>
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+
+</head>
+<body>
+    <h1>¿Dónde estas ubicado?</h1>
+    <!-- Leaflet -->
+    <div class = "mapBox">
+        <div id='map'></div>
+        <div id='ui'>
+            <h2 id="assigned-ips"></h2>
+            <!-- IPS django -->
+            <div id="actions" style="display: none;">
+                <form method="post" action="{% url 'map' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Guardar IPS</button>
+                </form>
+                <button id="recheck">Volver a hacer búsqueda</button>
+            </div>
+            <button id='locate'>
+                ENCUENTRA TU LOCALIZACIÓN!
+            </button>
+            <button id='find-nearest'>
+                ENCUENTRA TU IPS MÁS CERCANA!
+            </button>
+        </div>
+        
+        <!-- Loader -->
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+            <p id='status'>cargando ips más cercana</p>
+        </div>
+        
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+</body>
+</html>

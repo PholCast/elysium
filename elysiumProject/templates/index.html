@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Allysium Home</title>
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+</head>
+<body class="is-preload landing">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Allysium</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/users/login" class="button primary">Log In</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+        <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h2>Allysium</h2>
+                        <p class="description">Allysium es una plataforma web diseñada para mejorar la gestión de servicios de salud.  <br />
+                                                Como una EPS comprometida con la excelencia, Allysium facilita la administración de <br /> 
+                                                Instituciones Prestadoras de Salud (IPS) para garantizar que cada paciente reciba atención de calidad.</p>
+                    </header>
+                    <span class="image"><img src="{% static 'images/pic01.jpg' %}" alt="" /></span>
+                </div>
+                <a href="#one" class="goto-next scrolly">Next</a>
+            </section>
+
+        <!-- One -->
+            <section id="one" class="spotlight style1 bottom">
+                <span class="image fit main"><img src="{% static 'images/pic02.jpg' %}" alt="" /></span>
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 col-12-medium">
+                                <header>
+                                    <h2>Centralización y Eficiencia Operativa</h2>
+                                    <p>Optimización de Recursos y Gestión Centralizada</p>
+                                </header>
+                            </div>
+                            <div class="col-4 col-12-medium">
+                                <p>Nuestra plataforma centraliza todas las operaciones relacionadas 
+                                con la gestión de IPS's, proporcionando un punto de control único 
+                                para supervisar y mejorar la prestación de servicios. Allysium integra 
+                                funcionalidades de gestión de citas, historiales médicos electrónicos 
+                                </p>
+
+                            </div>
+                            <div class="col-4 col-12-medium">
+                                <p>y seguimiento de tratamientos, todo bajo un sistema seguro.
+                                Esta centralización no solo reduce la carga administrativa, 
+                                sino que también mejora la eficiencia operativa, permitiendo 
+                                que los recursos se utilicen de manera más efectiva en 
+                                beneficio de los pacientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#two" class="goto-next scrolly">Next</a>
+            </section>
+
+        <!-- Two -->
+            <section id="two" class="spotlight style2 right">
+                <span class="image fit main"><img src="{% static 'images/pic03.jpg' %}" alt="" /></span>
+                <div class="content">
+                    <header>
+                        <h2>Compromiso con la Calidad y la Innovación</h2>
+                        <p>Adaptación Continua y Análisis Avanzado de Datos</p>
+                    </header>
+                    <p>En Allysium, nos enfocamos en elevar la calidad de los servicios de salud mediante el análisis avanzado de datos.
+                         Esto nos permite detectar áreas de mejora y tomar decisiones que beneficien a pacientes y profesionales. 
+                         Nuestra plataforma se actualiza constantemente para adaptarse a nuevas tecnologías y normativas, 
+                         manteniendo a nuestras IPS's a la vanguardia en la atención médica.</p>
+
+                    <ul class="actions">
+                        <li><a href="#" class="button">Learn More</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; 2024 Allysium. Todos los derechos reservados.</li>
+            </ul>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+        <script src="{% static 'js/jquery.min.js'%}"></script>
+        <script src="{% static 'js/jquery.scrolly.min.js'%}"></script>
+        <script src="{% static 'js/jquery.dropotron.min.js'%}"></script>
+        <script src="{% static 'js/jquery.scrollex.min.js'%}"></script>
+        <script src="{% static 'js/browser.min.js'%}"></script>
+        <script src="{% static 'js/breakpoints.min.js'%}"></script>
+        <script src="{% static 'js/util.js'%}"></script>
+        <script src="{% static 'js/main.js'%}"></script>
+        <script src="{% static 'js/map.js' %}"></script>
+
+</body>
+</html>

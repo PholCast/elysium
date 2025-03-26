@@ -1,0 +1,33 @@
+.infoAcc{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    max-width: 1200px;
+    margin-top: 40px;
+    width: 90%;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    border: 1px solid hsl(0, 0%, 88%);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.infoAcc li {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e1e1e1;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.infoAcc li:last-child {
+    border-bottom: none;
+}
+
+.infoAcc li::before {
+    content: "• ";
+    color: #007BFF; /* Azul suave para el símbolo de la lista */
+    font-weight: bold;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Clinica</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/appointments.css' %}">
+    <link rel="stylesheet" href="{% static 'css/clinicHistory.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+
+
+</head>
+<body>
+    <!-- NAVBAR -->
+    <section id="hero">
+
+        <!--==navigation====================-->
+        <nav class="navigation">
+            <!--**menu-btn*****-->
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+            <!--**logo*********-->
+            <a href="/appointments" class="logo"><span>Ally</span>syum</a>
+            <!--**menu*********-->
+            <ul class="menu">
+                <li><a href="/appointments/clinicHistory">Historia Clinica</a></li>
+            </ul>
+            <!--**contact*******-->
+            <div class="navbar-logout">
+                {% if user.tipoDeAfiliacion != 'NA' %}
+                <a href="/appointments/getAppointments" class="nav-appointment-btn">Pedir cita</a>
+                {% endif %}                <a class="nav-appointment-btn account-button" href="/appointments/urAccount">Tu cuenta</a>
+                <button class = "nav-appointment-btn" onclick="window.location.href='/users/logout'">Logout</button>
+            </div>
+
+        </nav><!--nav-end-->
+        <!--==Content============================-->
+        <div class="hero-content">
+            <!--**text****************-->
+            <div class="hero-text">
+                <h1>Este es tu historial clinico!</h1>
+        </div>
+    </section>
+
+    <!-- HISTORIAS CLINICAS  -->
+    <div class = "clinicHistoryDiv">
+        <div class = "pastAppointments">
+            <h1>Citas pasadas</h1>
+            {% for a in past %}
+            <div class="appointment-container">
+                <p><strong>Tipo de cita:</strong> {{ a.tipoCita }}</p>
+                <p><strong>Doctor:</strong> {{ a.doctorId.nombre }} {{ a.doctorId.apellidos }}</p>
+                <p><strong>Paciente:</strong> {{ a.userId.nombre }} {{ a.userId.apellidos }}</p>
+                <p><strong>Fecha de la cita:</strong> {{ a.fechaInicio }}</p>
+                <p><strong>Fecha de Finalización de la cita:</strong>{{a.fechaFin }}</p>
+            </div>
+
+            {% empty %}
+                <p>No tienes citas pasadas.</p>
+            {% endfor %}
+        </div>
+        <div class = "futureAppointments">
+            <h1>Citas Pendientes</h1>
+            {% for ap in pending %}
+
+            <div class="pending-container">
+                <div class="detail-container">
+                    <p><strong>Tipo de cita:</strong> {{ ap.tipoCita }}</p>
+                    <p><strong>Doctor:</strong> {{ ap.doctorId.nombre }} {{ ap.doctorId.apellidos }}</p>
+                    <p><strong>Paciente:</strong> {{ ap.userId.nombre }} {{ ap.userId.apellidos }}</p>
+                    <p><strong>Fecha de la cita:</strong> {{ ap.fechaInicio }}</p>
+                </div>
+
+                <div class ="delete-container">
+                    <form action="{% url 'appointments:deleteAppointment' ap.id %}" method="POST">
+                        {% csrf_token %}
+
+                        <button class="cancel">Cancelar cita</button>
+                    </form>
+                </div>
+            </div>
+            {% empty %}
+                <p>No tienes citas Pendientes.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

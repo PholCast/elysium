@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Cliente</title>
+    <link rel="stylesheet" href="{% static "css/register.css" %}">
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+
+</head>
+<body>
+    <!-- Registrarse formulario -->
+    <div class=content>
+    <form action="" method="POST">
+        <h3>Registrar Usuarios</h3>
+
+        {% csrf_token %}
+        {% comment %} {{ form }} {% endcomment %}
+        {{ form }}
+        <button>Crear cuenta</button>
+        <h2>Allysium</h2>
+    </form>
+    </div>
+</body>
+</html>

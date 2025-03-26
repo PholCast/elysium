@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/appointments.css' %}">
+    <link rel="stylesheet" href="{% static 'css/getAppointments.css' %}">
+    <script src="{% static 'js/getAppointments.js' %}" defer></script>
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+    <title>Pedir Cita</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <section id="hero">
+        <nav class="navigation">
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+            <a href="/appointments" class="logo"><span>Ally</span>syum</a>
+            <ul class="menu">
+                <li><a href="/appointments/clinicHistory">Historia Clinica</a></li>
+            </ul>
+            <div class="navbar-logout">
+                <a href="/appointments/getAppointments" class="nav-appointment-btn">Pedir cita</a>
+                <a class="nav-appointment-btn account-button" href="/appointments/urAccount">Tu cuenta</a>
+                <button class="nav-appointment-btn" onclick="window.location.href='/users/logout'">Logout</button>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Pide aqui tu cita!</h1>
+            </div>
+        </div>
+    </section>
+    <div class = "getDate">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button id='appointment-button'>Solicitar cita</button>
+        </form>
+    </div>
+
+    <script type="application/json" id="doctors-data">
+        {{ doctors|safe }}
+    </script>    
+    <script type="application/json" id="appointments-data">
+        {{ appointments|safe }}
+    </script>
+</body>
+</html>

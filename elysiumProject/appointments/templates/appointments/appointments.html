@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/appointments.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--==Font-Awesome-for-icons=====-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+
+    <title>Appointments</title>
+</head>
+<body>
+    <!--==Hero-Section========================-->
+    <section id="hero">
+
+        <!--==navigation====================-->
+        <nav class="navigation">
+            <!--**menu-btn*****-->
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+            <!--**logo*********-->
+            <a href="/appointments" class="logo"><span>Ally</span>syum</a>
+            <!--**menu*********-->
+            <ul class="menu">
+                <li><a href="#our-team">Doctores</a></li>
+                <li><a href="#our-services">Nuestros servicios</a></li>
+                <li><a href="#testimonials">Testimonios</a></li>
+                <li><a href="/appointments/clinicHistory">Historia Clinica</a></li>
+            </ul>
+            <!--**contact*******-->
+            <div class="navbar-logout">
+                {% if user.tipoDeAfiliacion != 'NA' %}
+                <a href="/appointments/getAppointments" class="nav-appointment-btn">Pedir cita</a>
+                {% endif %}
+                <a class="nav-appointment-btn account-button" href="/appointments/urAccount">Tu cuenta</a>
+                <button class = "nav-appointment-btn" onclick="window.location.href='/users/logout'">Logout</button>
+            </div>
+
+        </nav><!--nav-end-->
+
+        <!--==Content============================-->
+        <div class="hero-content">
+            <!--**text****************-->
+            <div class="hero-text">
+                <h1>Encuentra el mejor servicio de atención!</h1>
+                <p>Descubre una atención médica de calidad, accesible y cercana a ti. Estamos comprometidos con tu bienestar.</p>
+                <!--btns-->
+                <div class="hero-text-btns">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i> Nuestros Doctores</a>
+                    <a href="#"><i class="fa-solid fa-check"></i> Pedir cita</a>
+                </div>
+            </div>
+            <!--**img*****************-->
+            <div class="hero-img">
+                <img alt="" src="{% static 'images/d1.png' %}">
+            </div>
+        </div>
+        
+    </section><!--hero-end-->
+
+    <!--==service-info===========================-->
+    <section class="what-we-provide">
+
+        <!--**box1***********-->
+        <div class="w-info-box w-i-box1">
+            <!--icon-->
+            <div class="w-info-icon">
+                <i class="fa-solid fa-capsules"></i>
+            </div>
+            <!--text-->
+            <div class="w-info-text">
+                <strong>Servicios especializados</strong>
+                <p>Ofrecemos una variedad de servicios especializados para atender tus necesidades de salud.</p>
+            </div>
+        </div>
+        <!--**box2***********-->
+        <div class="w-info-box w-i-box2">
+            <!--icon-->
+            <div class="w-info-icon">
+                <i class="fa-regular fa-comments"></i>
+            </div>
+            <!--text-->
+            <div class="w-info-text">
+                <strong>24/7 Cuidado avanzado</strong>
+                <p>Estamos disponibles las 24 horas del día para proporcionarte el cuidado que necesitas.</p>
+            </div>
+        </div>
+        <!--**box3***********-->
+        <div class="w-info-box w-i-box3">
+            <!--icon-->
+            <div class="w-info-icon">
+                <i class="fa-solid fa-square-poll-horizontal"></i>
+            </div>
+            <!--text-->
+            <div class="w-info-text">
+                <strong>Pedir citas en tu casa!</strong>
+                <p>Facilitamos la programación de citas desde la comodidad de tu hogar.</p>
+            </div>
+        </div>
+    
+    </section><!--end-->
+
+    <!--==Story=============================-->
+    <section id="our_story">
+
+        <!--**img**-->
+        <div class="our-story-img">
+            <img src="{% static 'images/story_img.jpg' %}"/>
+        </div>
+        <!--**text**-->
+        <div class="our-stroy-text">
+            <h2>Corta historia de nuestra clinica</h2>
+            <p>Nuestra clínica ha sido pionera en el sector de la salud, ofreciendo servicios de calidad durante más de 20 años. Nuestro equipo está compuesto por expertos en diversas especialidades médicas.</p>
+            <p>Con el objetivo de brindar la mejor atención, seguimos innovando y mejorando nuestros servicios cada día.</p>
+            <!--numbers-of-happy-patients-->
+            <div class="story-numbers-container">
+                <!--box-->
+                <div class="story-numbers-box s-n-box1">
+                    <strong>1000+</strong>
+                    <span>Pacientes felices</span>
+                </div>
+                <!--box-->
+                <div class="story-numbers-box s-n-box2">
+                    <strong>215+</strong>
+                    <span>Doctores expertos</span>
+                </div>
+                <!--box-->
+                <div class="story-numbers-box s-n-box3">
+                    <strong>315+</strong>
+                    <span>Salas de hospital</span>
+                </div>
+                <!--box-->
+                <div class="story-numbers-box s-n-box4">
+                    <strong>106+</strong>
+                    <span>Precios ganados</span>
+                </div>
+            </div>
+        </div>
+        
+    </section><!--story-end-->
+
+    <!--==Our-Services======================-->
+    <section id="our-services">
+
+        <!--**heading********************-->
+        <div class="services-heading">
+            <!--text-->
+            <div class="services-heading-text">
+                <strong>Nuestros servicios</strong>
+                <h2>Servicios de alta calidad para ti</h2>
+            </div>
+            <!--btns-->
+            <div class="service-slide-btns">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <!--**container*******************-->
+        <div class="services-box-container">
+
+             <!-- Swiper -->
+            <div class="swiper mySwiperservices">
+                <div class="swiper-wrapper">
+                    <!--**1*******-->
+                    <div class="swiper-slide">
+                    <!--**box1**-->
+                    <div class="service-box s-box1">
+                        <!--icon-->
+                        <i class="fa-solid fa-tooth"></i>
+                        <!--title-->
+                        <strong>Cuidado dental</strong>
+                        <!--details-->
+                        <p>Nuestros servicios dentales aseguran una sonrisa saludable y radiante para ti.</p>
+                        <!--read more-->
+                        <a href="#">Leer más</a>
+                    </div>
+                    </div><!--slide-end-->
+                    <!--**1*******-->
+                    <div class="swiper-slide">
+                    <!--**box1**-->
+                    <div class="service-box s-box2">
+                        <!--icon-->
+                        <i class="fa-solid fa-eye"></i>
+                        <!--title-->
+                        <strong>Cuidado de la visión</strong>
+                        <!--details-->
+                        <p>Proveemos atención especializada para el cuidado y mantenimiento de tu vista.</p>
+                        <!--read more-->
+                        <a href="#">Leer más</a>
+                    </div>
+                    </div><!--slide-end-->
+                    <!--**1*******-->
+                    <div class="swiper-slide">
+                    <!--**box1**-->
+                    <div class="service-box s-box3">
+                        <!--icon-->
+                        <i class="fa-solid fa-face-smile"></i>
+                        <!--title-->
+                        <strong>Cuidado de la piel</strong>
+                        <!--details-->
+                        <p>Ofrecemos tratamientos avanzados para mantener tu piel saludable y hermosa.</p>
+                        <!--read more-->
+                        <a href="#">Leer más</a>
+                    </div>
+                    </div><!--slide-end-->
+                    <!--**1*******-->
+                    <div class="swiper-slide">
+                    <!--**box1**-->
+                    <div class="service-box s-box4">
+                        <!--icon-->
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <!--title-->
+                        <strong>Consulta médica</strong>
+                        <!--details-->
+                        <p>Nuestros médicos están listos para brindarte la mejor atención personalizada.</p>
+                        <!--read more-->
+                        <a href="#">Leer más</a>
+                    </div>
+                    </div><!--slide-end-->
+                </div><!--wrapper-end-->
+            </div><!--swiper-end-->
+
+        </div>
+
+        <!--btn-->
+        <span class="service-btn">Contactanos para cualquier ayuda o servicio <a href="#">Empecemos!</a></span>
+    
+    </section><!--services-end-->
+
+    <!--==Why-choose-us=======================-->
+    <section id="why-choose-us">
+
+        <!--**left*****************-->
+        <div class="why-choose-us-left">
+            <h3>Por qué escogernos?</h3>
+            <!--==container====-->
+            <div class="why-choose-box-container">
+                <!--**box**-->
+                <div class="why-choose-box">
+                    <!--icon-->
+                    <i class="fa-solid fa-check"></i>
+                    <!--text-->
+                    <div class="why-choose-box-text">
+                        <strong>Cuidado avanzado</strong>
+                        <p>Ofrecemos atención médica de última generación con tecnologías avanzadas.</p>
+                    </div>
+                </div>
+                <!--**box**-->
+                <div class="why-choose-box">
+                    <!--icon-->
+                    <i class="fa-solid fa-check"></i>
+                    <!--text-->
+                    <div class="why-choose-box-text">
+                        <strong>Pedir citas online</strong>
+                        <p>Facilita tu acceso a nuestros servicios con nuestra plataforma de citas en línea.</p>
+                    </div>
+                </div>
+                <!--**box**-->
+                <div class="why-choose-box">
+                    <!--icon-->
+                    <i class="fa-solid fa-check"></i>
+                    <!--text-->
+                    <div class="why-choose-box-text">
+                        <strong>Medicina y cirugia</strong>
+                        <p>Contamos con un equipo de expertos en diversas especialidades médicas y quirúrgicas.</p>
+                    </div>
+                </div>
+                <!--**box**-->
+                <div class="why-choose-box">
+                    <!--icon-->
+                    <i class="fa-solid fa-check"></i>
+                    <!--text-->
+                    <div class="why-choose-box-text">
+                        <strong>Test de laboratorio</strong>
+                        <p>Realizamos pruebas de laboratorio precisas y rápidas para un diagnóstico confiable.</p>
+                    </div>
+                </div>
+            </div>
+            <!--==btn========-->
+            <a href="#" class="why-choose-us-btn">Pedir citas</a>
+        </div><!--left-end-->
+
+        <!--**right*******************-->
+        <div class="why-choose-us-right">
+            <h3>Emergencia?<br/>
+                Contactanos
+            </h3>
+            <p>Estamos aquí para ayudarte en cualquier situación de emergencia. Nuestro equipo está disponible para atender tus necesidades inmediatas.</p>
+            <!--==container====-->
+            <div class="w-right-contact-container">
+                <!--**box**-->
+                <div class="w-right-contact-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <!--text-->
+                    <div class="w-right-contact-box-text">
+                        <span>Llamanos ahora</span>
+                        <strong>+123 4567 89</strong>
+                    </div>
+                </div>
+                <!--**box**-->
+                <div class="w-right-contact-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <!--text-->
+                    <div class="w-right-contact-box-text">
+                        <span>Mandanos un correo</span>
+                        <strong>info@example.com</strong>
+                    </div>
+                </div>
+            </div>
+        </div><!--right-end-->
+
+    </section><!--end-->
+
+    <!--==Team===========================-->
+    <section id="our-team">
+
+        <!--**heading*****************-->
+        <div class="our-team-heading">
+            <h3>Conoce nuestros especialistas</h3>
+            <h2>Conoce a nuestros doctores</h2>
+        </div>
+
+        <!--**team-container***********-->
+        <div class="team-box-container">
+            <!-- Swiper -->
+            <div class="swiper mySwiperteam">
+            <div class="swiper-wrapper">
+                <!--**1***-->
+                <div class="swiper-slide">
+                    <!--**box**-->
+                    <div class="team-box">
+                        <!--img-->
+                        <div class="team-img">
+                            <img alt="" src="{% static 'images/d1.png' %}">
+                        </div>
+                        <!--text-->
+                        <div class="team-text">
+                            <strong>Jorge Ramirez</strong>
+                            <span>Cardiologia</span>
+                        </div>
+                    </div>
+                </div><!--end-slide-->
+                <!--**1***-->
+                <div class="swiper-slide">
+                    <!--**box**-->
+                    <div class="team-box">
+                        <!--img-->
+                        <div class="team-img">
+                            <img alt="" src="{% static 'images/d2.png' %}">
+                        </div>
+                        <!--text-->
+                        <div class="team-text">
+                            <strong>Luis Hernandez</strong>
+                            <span>Neurologia</span>
+                        </div>
+                    </div>
+                </div><!--end-slide-->
+                <!--**1***-->
+                <div class="swiper-slide">
+                    <!--**box**-->
+                    <div class="team-box">
+                        <!--img-->
+                        <div class="team-img">
+                            <img alt="" src="{% static 'images/d3.png' %}">
+                        </div>
+                        <!--text-->
+                        <div class="team-text">
+                            <strong>Pedro Gonzalez</strong>
+                            <span>Ortopedia</span>
+                        </div>
+                    </div>
+                </div><!--end-slide-->
+                <!--**1***-->
+                <div class="swiper-slide">
+                    <!--**box**-->
+                    <div class="team-box">
+                        <!--img-->
+                        <div class="team-img">
+                            <img alt="" src="{% static 'images/d4.png' %}">
+                        </div>
+                        <!--text-->
+                        <div class="team-text">
+                            <strong>Camila Castro</strong>
+                            <span>Oftalmologia</span>
+                        </div>
+                    </div>
+                </div><!--end-slide-->
+                <!--**1***-->
+                <div class="swiper-slide">
+                    <!--**box**-->
+                    <div class="team-box">
+                        <!--img-->
+                        <div class="team-img">
+                            <img alt="" src="{% static 'images/d5.png' %}">
+                        </div>
+                        <!--text-->
+                        <div class="team-text">
+                            <strong>Valeria Moreno</strong>
+                            <span>Dermatologia</span>
+                        </div>
+                    </div>
+                </div><!--end-slide-->
+            </div><!--wrapper-end-->
+            <div class="swiper-pagination"></div>
+            </div><!--swiper-end-->
+        </div>
+
+    </section><!--team-end-->
+
+    <!--==Testimonials============================-->
+    <section id="testimonials">
+
+        <!--**heading****************-->
+        <div class="testimonials-heading">
+            <h3>Feedback de nuestros pacientes</h3>
+            <p>Lo que dicen nuestros pacientes</p>
+        </div>
+
+        <!--**testimonials-Content****-->
+        <div class="testimonials-content">
+
+            <!--**img************-->
+            <div class="testimonials-img">
+                <img alt="" src="{% static 'images/testimonials-img.png' %}">
+            </div>
+
+            <!--**box-container**-->
+            <div class="testimonials-box-container">
+
+            <!-- Swiper -->
+            <div class="swiper mySwipertesti">
+            <div class="swiper-wrapper">
+                <!--**1***********-->
+                <div class="swiper-slide">
+                <!--**box**-->
+                <div class="testimonials-box">
+                    <!--profile-->
+                    <div class="t-profile">
+                        <!--img-->
+                        <div class="t-profile-img">
+                            <img alt="" src="{% static 'images/t1.jpg' %}">
+                        </div>
+                        <!--text-->
+                        <div class="t-profile-text">
+                            <strong>Pinchilin</strong>
+                            <span>From China</span>
+                            <div class="t-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--feedback-->
+                    <p>El cuidado y la atención que recibí fueron excepcionales. Recomiendo encarecidamente este hospital a todos mis amigos y familiares.</p>
+                </div><!--box-end-->
+            </div><!--slide-end-->
+
+            <!--**2***********-->
+            <div class="swiper-slide">
+                <!--**box**-->
+                <div class="testimonials-box">
+                    <!--profile-->
+                    <div class="t-profile">
+                        <!--img-->
+                        <div class="t-profile-img">
+                            <img alt="" src="{% static 'images/t1.jpg' %}">
+                        </div>
+                        <!--text-->
+                        <div class="t-profile-text">
+                            <strong>enyeldenyer</strong>
+                            <span>From India</span>
+                            <div class="t-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--feedback-->
+                    <p>El personal médico es increíblemente amable y profesional. Estoy muy satisfecho con el tratamiento que recibí aquí.</p>
+                </div><!--box-end-->
+            </div><!--slide-end-->
+
+            <!--**3***********-->
+            <div class="swiper-slide">
+                <!--**box**-->
+                <div class="testimonials-box">
+                    <!--profile-->
+                    <div class="t-profile">
+                        <!--img-->
+                        <div class="t-profile-img">
+                            <img alt="" src="{% static 'images/t1.jpg' %}">
+                        </div>
+                        <!--text-->
+                        <div class="t-profile-text">
+                            <strong>pol</strong>
+                            <span>From pol</span>
+                            <div class="t-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--feedback-->
+                    <p>Tuve una experiencia maravillosa. El equipo médico hizo que me sintiera seguro y cuidado durante todo mi tratamiento.</p>
+                </div><!--box-end-->
+            </div><!--slide-end-->
+            
+            </div><!--wrapper-end-->
+            <div class="swiper-pagination"></div>
+            </div><!--swiper-end-->
+
+            </div><!--container-end-->
+        
+        </div><!--content-end-->
+
+    </section><!--testimonials-end-->
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; 2024 Allysium. Todos los derechos reservados.</li>
+        </ul>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    /*-services--*/
+    var swiper = new Swiper(".mySwiperservices", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          700: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+      });
+    /*--team--*/
+    var swiper = new Swiper(".mySwiperteam", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          560: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          950: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1250: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        },
+      });
+    /*--testimonials--*/
+      var swiper = new Swiper(".mySwipertesti", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+</html>

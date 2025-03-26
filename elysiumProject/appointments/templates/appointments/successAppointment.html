@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cita exitosa</title>
+    <link rel="stylesheet" href="{% static 'css/successAppointment.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/fav-icon.png' %}">
+
+</head>
+<body>
+    <!-- Pagina para mostrar que la cita se creo exitosamente -->
+    <div class = "successApointment">
+        <div class = "son">
+            <h1>Cita creada exitosamente</h1>
+            <p>Detalles de la cita:</p>
+            <ul>
+                <li><strong>Tipo de Cita:</strong> {{ appointment.tipoCita }}</li>
+                <li><strong>Doctor:</strong> {{ appointment.doctorId }}</li>
+                <li><strong>Fecha de la Cita:</strong> {{ appointment.fechaInicio }}</li>
+            </ul>
+            <a href="{% url 'appointments:appointmentsPage' %}">Volver al inicio</a>
+        </div>    
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+[
+    {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-75.6046390329014, 6.1603907]
+        },
+        "properties": {
+            "cartodb_id": 1031,
+            "access_days_time": "24 hours daily",
+            "city": "Medellin",
+            "ips_name": "IPS SURA MAYORCA"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-75.6051, 6.2329]
+        },
+        "properties": {
+            "cartodb_id": 2021,
+            "access_days_time": "24 hours daily",
+            "city": "Medellin",
+            "ips_name": "IPS SURA MOLINOS"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-75.607537, 6.174988]
+        },
+        "properties": {
+            "cartodb_id": 3031,
+            "access_days_time": "24 hours daily",
+            "city": "Medellin",
+            "ips_name": "IPS SURA CONFAMA ITAGUI"
+        }
+    },
+    {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-75.5625, 6.2477]
+        },
+        "properties": {
+            "cartodb_id": 4031,
+            "access_days_time": "24 hours daily",
+            "city": "Medellin",
+            "ips_name": "IPS SURA CENTRO"
+        }
+    }
+    
+]
